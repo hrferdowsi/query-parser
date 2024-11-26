@@ -4,6 +4,8 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
+    "compile": "nearleyc ./src/lib/grammar.ne -o ./src/lib/grammar.ts",
+    "postinstall": "npm run compile",
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
