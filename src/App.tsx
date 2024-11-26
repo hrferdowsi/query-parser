@@ -1,9 +1,12 @@
+import { Parser } from '@/components/parser';
+import { Layout } from '@/components/layout';
+
 function App() {
 
   return (
-    <>
-      Clean Code
-    </>
+    <Layout>
+      <Parser />
+    </Layout>
   )
 }
 
