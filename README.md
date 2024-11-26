@@ -1,50 +1,24 @@
-# React + TypeScript + Vite
+# Qantas code challenge
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Thi code is written by [Reza Fer](https://www.linkedin.com/in/reza-fer/) as part of the interview process.
 
-Currently, two official plugins are available:
+## Approach
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+This project was initiated with the create vite and more dependencies were added for development. I used VSCode for my IDE therefore codes might look different in your ideal editor as it uses different formatter. I am using [Shadcn component library](https://ui.shadcn.com/) to accelerate the development and [Tailwind CSS](https://tailwindcss.com/). The main parser logic is located under lib folder and consist of grammar.ne, lexer.ts and parser function in utils. Some codes could have broken down into seperated files (like styled components) but I think for this code challenge, the code organised enough.
 
-## Expanding the ESLint configuration
+Please do not hesitate to contact me if you have any questions about this code challenge.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
 
-- Configure the top-level `parserOptions` property like this:
+## Available Scripts
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+### yarn compile / npm run compile
+Runs the Nearley.js compiler and create a fresh grammar.ts file.\
+You need to run this command everytime you update the grammar.ne file.
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+### yarn dev / npm run dev
+Runs the app in the development mode on port 5173.\
+Open [http://localhost:5173](http://localhost:5173) to view it in the browser.
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+### yarn dev-compile / npm run dev-compile
+At first runs the Nearley compiler first and generate grammar.ts file and then runs app in the development mode on port 5173.\
+Open [http://localhost:5173](http://localhost:5173) to view it in the browser.
